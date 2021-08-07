@@ -1,0 +1,283 @@
+/* Stripping styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Setting up containers */
+.canvas {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: #fcf1f1;
+    width: 100%;
+    height: 100vh;
+}
+
+.gongContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.gong {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 60vmin;
+    height: 60vmin;
+}
+
+/* Mallet container and animation styling  */
+.malletContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40vmin;
+    height: 60vmin;
+}
+
+.mallet {
+    height: 35vmin;
+    width: 5vmin;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform-origin: bottom;
+    transform-style: preserve-3d;
+}
+
+.swing {
+    animation: swing 3000ms linear 1;
+}
+
+@keyframes swing {
+    25% {
+        transform: translate(-200px, -200px) rotate(90deg);
+    }
+    50% {
+        transform: translateX(-200px) rotate3d(0.5, 0.8, 0, 3.142rad);
+    }
+}
+
+/* Gong Frame Styling */
+.topBar {
+    position: absolute;
+    width: 55vmin;
+    height: 0;
+    top: 5vmin;
+    border-bottom: 4vmin solid rgb(78, 53, 42);
+    border-left: 4vmin solid transparent;
+    border-right: 4vmin solid transparent;
+    transform: rotate(180deg);
+}
+
+.bottomBar {
+    position: absolute;
+    width: 50vmin;
+    height: 0;
+    top: 11vmin;
+    border-bottom: 3vmin solid rgb(78, 53, 42);
+    border-left: 3vmin solid transparent;
+    border-right: 3vmin solid transparent;
+    transform: rotate(180deg);
+}
+
+.postLeft {
+    position: absolute;
+    width: 3vmin;
+    height: 50vmin;
+    background-color: rgb(78, 53, 42);
+    left: 10vmin;
+}
+
+.postRight {
+    position: absolute;
+    width: 3vmin;
+    height: 50vmin;
+    background-color: rgb(78, 53, 42);
+    right: 10vmin;
+}
+
+.base {
+    position: absolute;
+    width: 55vmin;
+    height: 0;
+    bottom: 5vmin;
+    border-bottom: 4vmin solid rgb(78, 53, 42);
+    border-left: 4vmin solid transparent;
+    border-right: 4vmin solid transparent;
+}
+
+.rope1 {
+    position: absolute;
+    width: 1vmin;
+    height: 7vmin;
+    top: 13.8vmin;
+    left: 20vmin;
+    background-color: black;
+}
+
+.rope2 {
+    position: absolute;
+    width: 1vmin;
+    height: 7vmin;
+    top: 13.8vmin;
+    right: 20vmin;
+    background-color: black;
+}
+
+/* Gong Cymbal Styling */
+
+.cymbal1 {
+    position: absolute;
+    width: 31vmin;
+    height: 31vmin;
+    top: 17vmin;
+    background-color: goldenrod;
+    border-radius: 50%;
+    box-shadow: 0 0 0 0 rgb(235, 179, 38);
+}
+
+.gongRing {
+    animation: pulse 1.35s 3 cubic-bezier(0.66, 0, 0, 1);
+}
+
+@keyframes pulse {
+    to {
+        box-shadow: 0 0 0 45px rgba(232, 76, 61, 0);
+    }
+}
+
+.cymbal2 {
+    position: absolute;
+    width: 21vmin;
+    height: 21vmin;
+    top: 5vmin;
+    left: 5vmin;
+    background-color: rgb(235, 179, 38);
+    border-radius: 50%;
+}
+
+.cymbal3 {
+    position: absolute;
+    width: 11vmin;
+    height: 11vmin;
+    top: 5vmin;
+    left: 5vmin;
+    background-color: goldenrod;
+    border-radius: 50%;
+}
+
+.shine1 {
+    position: absolute;
+    width: 0;
+    height: 0;
+    top: -7.5vmin;
+    left: -8.9vmin;
+    border-top: 9vmin solid transparent;
+    border-left: 15vmin solid white;
+    opacity: 0.3;
+    border-bottom: 9vmin solid transparent;
+    transform: rotate(32deg);
+    border-radius: 37%;
+    filter: blur(8px);
+}
+
+.shine2 {
+    position: absolute;
+    width: 0;
+    height: 0;
+    bottom: -7.5vmin;
+    right: -8.9vmin;
+    border-top: 9vmin solid transparent;
+    border-left: 15vmin solid white;
+    opacity: 0.3;
+    border-bottom: 9vmin solid transparent;
+    transform: rotate(-150deg);
+    border-radius: 37%;
+    filter: blur(8px);
+}
+
+/* Mallet Styling */
+.top {
+    position: absolute;
+    width: 4vmin;
+    height: 4vmin;
+    top: 0;
+    background-color: black;
+    z-index: 2;
+}
+
+/* Constructing the 3d cube top */
+.front {
+    transform: rotate(0deg) translateZ(2vmin);
+}
+
+.right {
+    transform: rotateY(90deg) translateZ(2vmin);
+}
+
+.back {
+    transform: rotateY(180deg) translateZ(2vmin);
+}
+
+.left {
+    transform: rotateY(-90deg) translateZ(2vmin);
+}
+
+.lid {
+    transform: rotateX(90deg) translateZ(2vmin);
+}
+
+.bottom {
+    transform: rotateX(-90deg) translateZ(2vmin);
+}
+
+/* Constructing the 3d mallet handle */
+
+.handle {
+    position: absolute;
+    width: 2vmin;
+    height: 30vmin;
+    bottom: 2vmin;
+    background-color: rgb(78, 53, 42);
+    border-radius: 40vmin;
+    z-index: 0;
+}
+
+.handle::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    width: 2vmin;
+    height: 30vmin;
+    background-color: rgb(78, 53, 42);
+    border-radius: 40vmin;
+    transform: rotateY(90deg);
+    z-index: -1;
+}
+
+button {
+    margin-top: 7vmin;
+    width: 30vmin;
+    height: 7vmin;
+    font-size: 2vmin;
+    color: rgb(145, 113, 33);
+    background: rgb(235, 179, 38);
+    box-shadow: 0 0 0 10px goldenrod, 5px 10px 0 9px rgb(194, 147, 30);
+    border: 0.5vmin solid rgb(194, 147, 30);
+    border-radius: 50vmin;
+    transition: all 0.3s;
+}
+
+button:active {
+    box-shadow: 0 0 0 10px goldenrod, 2px 5px 0 9px rgb(194, 147, 30);
+    position: relative;
+    top: 1px;
+}
