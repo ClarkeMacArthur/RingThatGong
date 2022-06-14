@@ -58,10 +58,10 @@
 
 @keyframes swing {
     25% {
-        transform: translate(-200px, -200px) rotate(90deg);
+        transform: translate(-10vmin, -10vmin) rotate(90deg);
     }
     50% {
-        transform: translateX(-200px) rotate3d(0.5, 0.8, 0, 3.142rad);
+        transform: translateX(-10vmin) rotate3d(0.5, 0.8, 0, 3.142rad);
     }
 }
 
@@ -150,7 +150,7 @@
 
 @keyframes pulse {
     to {
-        box-shadow: 0 0 0 45px rgba(232, 76, 61, 0);
+        box-shadow: 0 0 0 9vmin rgba(232, 76, 61, 0);
     }
 }
 
@@ -212,6 +212,7 @@
     top: 0;
     background-color: black;
     z-index: 2;
+    transform-style: preserve-3d;
 }
 
 /* Constructing the 3d cube top */
@@ -249,6 +250,7 @@
     background-color: rgb(78, 53, 42);
     border-radius: 40vmin;
     z-index: 0;
+    transform-style: preserve-3d;
 }
 
 .handle::after {
